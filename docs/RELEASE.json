@@ -1,0 +1,16 @@
+{
+  "name": "Doppler Wellness website reconstruction",
+  "date": "2026-09-16",
+  "kind": "New editable static frontend based on saved homepage text and screenshots; not original source export",
+  "content_routes": 35,
+  "html_files": 37,
+  "local_image_assets": 7,
+  "search_indexing_enabled": false,
+  "github_target": "selleryd/doppler",
+  "original_source_recovered": false,
+  "backend_recovered": false,
+  "form_submissions_tested": false,
+  "github_upload_performed": false,
+  "browser_assertions_passed": 118,
+  "browser_assertions_failed": 0
+}

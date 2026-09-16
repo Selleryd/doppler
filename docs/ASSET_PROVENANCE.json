@@ -1,0 +1,100 @@
+[
+  {
+    "asset": "assets/images/pool.webp",
+    "origin": "Cropped from a user-supplied screenshot of the earlier site. Not the original full-resolution artwork.",
+    "source_filename": "Screenshot 2026-09-15 at 3.31.26\u202fPM.png",
+    "source_file_id": "file_000000003a4481f5acb5a8176faadc75",
+    "crop_pixels": [
+      1004,
+      78,
+      2042,
+      813
+    ],
+    "width": 1038,
+    "height": 735
+  },
+  {
+    "asset": "assets/images/approach.webp",
+    "origin": "Cropped from a user-supplied screenshot of the earlier site. Not the original full-resolution artwork.",
+    "source_filename": "Screenshot 2026-09-14 at 2.14.58\u202fPM.png",
+    "source_file_id": "file_00000000adc081f58fa17e634afe2a81",
+    "crop_pixels": [
+      903,
+      55,
+      1708,
+      591
+    ],
+    "width": 805,
+    "height": 536
+  },
+  {
+    "asset": "assets/images/contact.webp",
+    "origin": "Cropped from a user-supplied screenshot of the earlier site. Not the original full-resolution artwork.",
+    "source_filename": "Screenshot 2026-09-11 at 2.18.00\u202fPM.png",
+    "source_file_id": "file_00000000036881f58ff6853667c99e31",
+    "crop_pixels": [
+      923,
+      104,
+      1754,
+      705
+    ],
+    "width": 831,
+    "height": 601
+  },
+  {
+    "asset": "assets/images/at-home.webp",
+    "origin": "Cropped from a user-supplied screenshot of the earlier site. Not the original full-resolution artwork.",
+    "source_filename": "Screenshot 2026-09-15 at 2.45.25\u202fPM.png",
+    "source_file_id": "file_00000000fc6c81f5ae437a51889bc3de",
+    "crop_pixels": [
+      764,
+      40,
+      1876,
+      934
+    ],
+    "width": 1112,
+    "height": 894
+  },
+  {
+    "asset": "assets/images/in-person.webp",
+    "origin": "Cropped from a user-supplied screenshot of the earlier site. Not the original full-resolution artwork.",
+    "source_filename": "Screenshot 2026-09-11 at 1.43.58\u202fPM.png",
+    "source_file_id": "file_0000000022a481f59ab8d448dd67b6ac",
+    "crop_pixels": [
+      1044,
+      275,
+      1712,
+      821
+    ],
+    "width": 668,
+    "height": 546
+  },
+  {
+    "asset": "assets/images/water.webp",
+    "origin": "Cropped from a user-supplied screenshot of the earlier site. Not the original full-resolution artwork.",
+    "source_filename": "Screenshot 2026-09-16 at 12.21.11\u202fPM.png",
+    "source_file_id": "file_000000006a4481f5be78c180b7d7eecc",
+    "crop_pixels": [
+      1595,
+      23,
+      2033,
+      1092
+    ],
+    "width": 438,
+    "height": 1069
+  },
+  {
+    "asset": "assets/images/sanctuary.webp",
+    "origin": "Cropped from a user-supplied screenshot of the earlier site. Not the original full-resolution artwork.",
+    "source_filename": "Screenshot 2026-09-14 at 2.09.17\u202fPM.png",
+    "source_file_id": "file_00000000f0e881f5923d04682d5af824",
+    "crop_pixels": [
+      473,
+      73,
+      829,
+      681
+    ],
+    "width": 356,
+    "height": 608
+  }
+]
