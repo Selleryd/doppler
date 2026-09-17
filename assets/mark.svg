@@ -1,1 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="18" fill="#0b2332"/><path d="M18 14h12c13 0 22 7 22 18s-9 18-22 18H18z" fill="none" stroke="#fffdf3" stroke-width="4"/><path d="M27 21c10 0 17 4 17 11s-7 11-17 11" fill="none" stroke="#ffe568" stroke-width="3" stroke-linecap="round"/><path d="M28 27c5 0 8 2 8 5s-3 5-8 5" fill="none" stroke="#fffdf3" stroke-width="3" stroke-linecap="round"/><circle cx="24" cy="32" r="2.5" fill="#ffe568"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
+  <title id="title">Doppler Wellness</title>
+  <desc id="desc">A modern letter D formed by a calm signal and an open path.</desc>
+  <defs>
+    <linearGradient id="field" x1="8" y1="6" x2="58" y2="58" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#143A4D"/>
+      <stop offset="1" stop-color="#071C2C"/>
+    </linearGradient>
+  </defs>
+  <rect x="2" y="2" width="60" height="60" rx="18" fill="url(#field)"/>
+  <path d="M18 15v34h10.2C39.3 49 47 42.1 47 32S39.3 15 28.2 15H18Z" fill="none" stroke="#FFFDF8" stroke-width="5.5" stroke-linejoin="round"/>
+  <circle cx="24" cy="32" r="2.7" fill="#FFE260"/>
+  <path d="M28.8 27.4c2.8 1.2 4.2 2.7 4.2 4.6s-1.4 3.4-4.2 4.6M31.8 22.6c6.4 2.3 9.6 5.4 9.6 9.4s-3.2 7.1-9.6 9.4" fill="none" stroke="#FFE260" stroke-width="2.4" stroke-linecap="round"/>
+</svg>

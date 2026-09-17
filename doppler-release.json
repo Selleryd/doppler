@@ -1,0 +1,14 @@
+{
+  "release_id": "DOPPLER_APPROVED_V25_CAPTURE_20260917",
+  "source": "original browser capture; not a reconstruction",
+  "origin": "https://doppler-wellness-reimagined.sellery.chatgpt.site",
+  "captured_at": "2026-09-17T00:47:52.768Z",
+  "source_zip_sha256": "792cd65c47138c70f39b3cca7f9bede05742433a39f4ffbe1b03556616927a0d",
+  "original_files": 64,
+  "html_pages": 21,
+  "original_file_changes": [],
+  "v25_fade_fix_already_present": true,
+  "homepage_sha256": "418642505c2578fe1f4f49baed40846eb9f72a6d8b0db9ea8842ba954de86e1b",
+  "css_sha256": "2310e6bfef3af8e3ef747dc4bf3487fbb6d005e91cc470f6fc0e4937a8e3d30f",
+  "javascript_sha256": "f5f8cf635cb4826ba99e36f295000b58b236e921cd9809370efd13c08e55e68e"
+}
