@@ -1,4 +1,5 @@
 (() => {
+  const leadEndpoint=document.querySelector('meta[name="doppler-lead-endpoint"]')?.content||'/api/leads';
   const menuButton=document.querySelector('.dw-menu-button');
   const mobile=document.querySelector('.dw-mobile');
   const setMenu=open=>{if(!menuButton||!mobile)return;menuButton.setAttribute('aria-expanded',String(open));menuButton.setAttribute('aria-label',open?'Close navigation':'Open navigation');mobile.hidden=!open;};
@@ -22,7 +23,7 @@
       const body=JSON.stringify(payload);if(body!==requestBody){requestId=crypto.randomUUID();requestBody=body;}busy=true;
       submit.disabled=true;const label=submit.innerHTML;submit.textContent='Sending…';status.textContent='';status.classList.remove('is-error');
       try{
-        const response=await fetch('/api/leads',{method:'POST',headers:{'Content-Type':'application/json','Idempotency-Key':requestId},body});
+        const response=await fetch(leadEndpoint,{method:'POST',credentials:'same-origin',headers:{'Content-Type':'application/json','Idempotency-Key':requestId},body});
         const result=await response.json();
         if(!response.ok||!result.ok)throw new Error(result.error||'We couldn’t send your request. Please try again.');
         form.querySelectorAll('input,select,button').forEach(x=>x.disabled=true);

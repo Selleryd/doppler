@@ -1,0 +1,77 @@
+/* An open, readable support atlas. Every area is present in normal document
+   flow; the ripple is a quiet accent, never a navigation mechanism. */
+.original-refined .dw-support-edit {
+  position: relative;
+  isolation: isolate;
+  padding-block: clamp(80px, 8.5vw, 128px) clamp(64px, 7vw, 108px);
+  color: #102b3b;
+  background: linear-gradient(180deg, rgba(255, 253, 247, .52), rgba(255, 253, 247, .13) 72%, transparent);
+}
+.dw-support-edit-wrap { width: min(1320px, calc(100% - clamp(48px, 8vw, 128px))); margin-inline: auto; }
+.dw-support-edit-intro { display: grid; grid-template-columns: 1.35fr .75fr; gap: clamp(48px, 8vw, 126px); align-items: end; }
+.original-refined .dw-support-edit-eyebrow { display: block; margin: 0 0 25px; color: #66547d; font: 600 12px/1.5 var(--dw-font, Inter, sans-serif); letter-spacing: .12em; text-transform: uppercase; }
+.original-refined .dw-support-edit-heading h2 { margin: 0; max-width: 13ch; color: #102b3b; font-size: clamp(43px, 5.05vw, 72px); font-weight: 570; letter-spacing: -.055em; line-height: 1.035; }
+.original-refined .dw-support-edit h2 em, .original-refined .dw-support-edit h3 em { font-family: var(--dw-serif, Baskerville, Georgia, serif); color: #6b50a6; font-weight: 400; letter-spacing: -.045em; }
+.dw-support-edit-intro-copy { padding-bottom: 5px; }
+.original-refined .dw-support-edit-intro-copy > p { max-width: 35ch; margin: 0 0 29px; color: #4d5962; font-size: clamp(17px, 1.45vw, 20px); line-height: 1.7; }
+.original-refined .dw-support-edit-link { display: inline-flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 44px; padding: 5px 0 8px; color: #102b3b; font-size: 16px; line-height: 1.4; font-weight: 650; letter-spacing: -.02em; text-decoration: none; border-bottom: 1px solid rgba(16, 43, 59, .34); transition: color .2s ease, border-color .2s ease; }
+.dw-support-edit-link svg { display: block; width: 22px; height: 22px; flex: 0 0 22px; }
+.original-refined .dw-support-edit-link:hover { color: #5f47c9; border-color: #5f47c9; }
+.dw-support-edit-link:focus-visible { outline: 2px solid #5f47c9; outline-offset: 6px; border-radius: 1px; }
+.dw-support-edit-lifeline { height: clamp(140px, 13vw, 170px); margin-top: clamp(24px, 3vw, 40px); pointer-events: none; }
+.dw-support-edit-wave { display: block; width: 100%; height: 100%; overflow: visible; }
+.dw-support-edit-wave--compact { display: none; }
+/* Direct, reversible scroll updates. A CSS transition here would leave the
+   beacon chasing the user's position, especially when they scroll back up. */
+.dw-support-edit-wave-line, .dw-support-edit-wave-beacon { transition: none; }
+.dw-support-edit-lifeline + .dw-support-edit-atlas { margin-top: clamp(16px, 2vw, 28px); }
+.dw-support-edit-atlas { margin-top: clamp(50px, 6vw, 82px); }
+.original-refined .dw-support-edit-atlas-caption { margin: 0 0 22px; color: #6c6174; font-size: 13px; line-height: 1.5; font-weight: 500; letter-spacing: .01em; }
+.dw-support-edit-areas { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); column-gap: clamp(22px, 3.3vw, 50px); padding: 0; margin: 0; list-style: none; }
+.dw-support-edit-areas > li { display: flex; align-items: center; min-height: 92px; margin: 0; padding: 18px 4px 18px 0; border-top: 1px solid rgba(73, 58, 91, .17); color: #253c47; font-size: clamp(17px, 1.45vw, 20px); font-weight: 480; line-height: 1.4; letter-spacing: -.023em; overflow-wrap: break-word; }
+.dw-support-edit-atlas-footer { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px 32px; margin-top: 24px; }
+.original-refined .dw-support-edit-atlas-footer > p { margin: 0; color: #665f6b; font-size: 14px; line-height: 1.6; }
+.original-refined .dw-support-edit-link--quiet { color: #5b447a; font-size: 14px; font-weight: 600; border-color: rgba(91, 68, 122, .25); }
+.dw-support-edit-link--quiet svg { width: 19px; height: 19px; flex-basis: 19px; }
+.dw-support-edit-connection { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(24px, 5vw, 78px); align-items: center; margin-top: clamp(70px, 8vw, 116px); padding-top: clamp(50px, 5vw, 72px); border-top: 1px solid rgba(73, 58, 91, .12); }
+.original-refined .dw-support-edit-connection-copy h3 { margin: 0 0 24px; color: #102b3b; font-size: clamp(36px, 3.6vw, 52px); line-height: 1.08; font-weight: 540; letter-spacing: -.05em; }
+.original-refined .dw-support-edit-connection-copy > p { max-width: 37ch; margin: 0; color: #4d5962; font-size: 17px; line-height: 1.75; }
+.original-refined .dw-support-edit-connection-copy > .dw-support-edit-consent { max-width: 40ch; margin-top: 18px; color: #5f5968; font-size: 14px; line-height: 1.7; }
+.dw-support-edit-art { min-width: 0; position: relative; aspect-ratio: 660 / 380; pointer-events: none; }
+.dw-support-edit-art::before { content: ""; position: absolute; inset: 12% 1% 6%; z-index: -1; background: radial-gradient(ellipse at 40% 53%, rgba(255, 234, 168, .27), rgba(235, 224, 247, .15) 43%, transparent 71%); border-radius: 50%; }
+.dw-support-edit-ripple { display: block; width: 100%; height: 100%; overflow: visible; }
+.dw-support-edit-rings { transform-origin: 330px 212px; transform: translateY(var(--dw-support-drift, 0px)) scale(var(--dw-support-spread, 1)); }
+.dw-support-edit-pebble { transform: translateY(var(--dw-support-pebble, 0px)); }
+@media (max-width: 1000px) {
+  .dw-support-edit-intro { grid-template-columns: 1.2fr .8fr; gap: 40px; }
+  .original-refined .dw-support-edit-heading h2 { font-size: clamp(43px, 5.8vw, 60px); }
+  .dw-support-edit-areas { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .dw-support-edit-connection { gap: 24px; }
+}
+@media (max-width: 680px) {
+  .original-refined .dw-support-edit { padding-block: 76px 54px; }
+  .dw-support-edit-wrap { width: calc(100% - 48px); }
+  .dw-support-edit-intro { grid-template-columns: 1fr; gap: 28px; }
+  .original-refined .dw-support-edit-eyebrow { font-size: 11px; margin-bottom: 20px; }
+  .original-refined .dw-support-edit-heading h2 { max-width: 13ch; font-size: clamp(39px, 10.6vw, 59px); }
+  .original-refined .dw-support-edit-intro-copy > p { max-width: 38ch; margin-bottom: 18px; font-size: 17px; }
+  .dw-support-edit-lifeline { height: 150px; margin-top: 23px; }
+  .dw-support-edit-wave--wide { display: none; }
+  .dw-support-edit-wave--compact { display: block; }
+  .dw-support-edit-lifeline + .dw-support-edit-atlas { margin-top: 19px; }
+  .dw-support-edit-atlas { margin-top: 43px; }
+  .original-refined .dw-support-edit-atlas-caption { margin-bottom: 16px; }
+  .dw-support-edit-areas { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 22px; }
+  .dw-support-edit-areas > li { min-height: 94px; padding-block: 17px; font-size: 16px; line-height: 1.45; }
+  .dw-support-edit-atlas-footer { gap: 11px; margin-top: 17px; }
+  .original-refined .dw-support-edit-atlas-footer > p { font-size: 13px; }
+  .dw-support-edit-connection { grid-template-columns: 1fr; margin-top: 56px; padding-top: 42px; gap: 18px; }
+  .original-refined .dw-support-edit-connection-copy h3 { font-size: clamp(35px, 9.5vw, 49px); margin-bottom: 20px; }
+  .original-refined .dw-support-edit-connection-copy > p { font-size: 16px; max-width: 38ch; }
+  .original-refined .dw-support-edit-connection-copy > .dw-support-edit-consent { font-size: 13px; margin-top: 15px; }
+  .dw-support-edit-art { width: calc(100% + 24px); margin-inline: -12px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .dw-support-edit-rings, .dw-support-edit-pebble { transform: none; }
+  .original-refined .dw-support-edit-link { transition: none; }
+}

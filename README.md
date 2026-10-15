@@ -1,18 +1,18 @@
 # Doppler Wellness
 
-The approved V40 website source is now maintained in this repository. It targets older adults, their families and senior living communities, with personalized therapist matching, insurance assistance, support groups and consent-based care-team coordination.
+The approved website is published at https://selleryd.github.io/doppler/.
 
-Approved source checkpoint: `fa955069a08081796169d723d7592f8bcfab722c` from the ChatGPT Sites project. This includes the latest journal separator removal, mobile spacing correction and restored glass styling.
+The site supports older adults, their families and senior living communities, with personalized therapist matching, insurance assistance, support groups and consent-based care-team coordination. The latest release retains the approved glass materials, lifeline animation, mobile refinements and all 12 journal articles.
 
-## Current hosting
+## Website and backend
 
-The complete approved application runs at https://doppler-wellness-reimagined.sellery.chatgpt.site with its existing private review access. The application source lives in `app/`, `src/`, `public/`, `lib/`, `db/`, `drizzle/` and `build/`.
+The root HTML pages, CSS, JavaScript and `assets/` are the current GitHub Pages website, exported from the final generated application pages. The complete application source remains in `app/`, `src/`, `public/`, `lib/`, `db/`, `drizzle/` and `build/`.
 
-The root `index.html`, `styles.css`, `app.js`, `assets/`, `pages/`, `blogs/` and `a/` remain the previous GitHub Pages deployment. They are retained so a source push does not replace the public website with invalid Worker output. They are not the approved V40 application. The GitHub Actions workflow validates the new source; it does not deploy Worker files as a static website.
+The lead API runs on the existing hosted application at https://doppler-wellness-reimagined.sellery.chatgpt.site/api/leads. Both the patient quiz and the short career/community forms use that endpoint. Its CORS policy accepts the exact GitHub Pages origin and the native application origin, only for contact submissions. It does not send cookies across origins or allow cross-origin office operations.
 
-To replace the public GitHub Pages version, use a dedicated export of `src/generated-pages.json` and `public/` with the `/doppler/` base path, together with a public production lead API. A full application deployment needs a Cloudflare Worker-compatible host and D1 database. GitHub Pages cannot run the server routes or database. Do not deploy `.generated/legacy/` (an intermediate, older design) or upload the entire Worker `dist/` folder to Pages.
+Office access is at https://doppler-wellness-reimagined.sellery.chatgpt.site/office/. Anonymous visitors are sent to ChatGPT sign-in; the lead list, PDFs and resend actions also enforce an office account allowlist on the server. No office records are exported to GitHub Pages or included in this repository.
 
-## Development and validation
+## Development and publishing
 
 Use Node.js 22.13 or newer. Install dependencies with `npm ci`, then:
 
@@ -22,16 +22,24 @@ npm run check
 npm run build
 ```
 
-`npm run generate` produces the final 35 marketing, journal and office routes. `npm run build` creates the Vinext/Cloudflare Worker application. Database migrations are in `drizzle/`. The existing `.openai/hosting.json` identifies the ChatGPT Sites project.
+`npm run generate` produces the final 35 marketing, journal and office routes. `npm run build` creates the Vinext/Cloudflare Worker backend. Database migrations are in `drizzle/` and the existing `.openai/hosting.json` identifies the hosted project.
+
+To export the approved design for GitHub Pages, choose a clean directory outside the repository:
+
+```sh
+node scripts/export-pages.mjs --output /tmp/doppler-pages
+```
+
+The exporter uses `src/generated-pages.json` and `public/`, prefixes local URLs with `/doppler/`, configures the hosted lead endpoint, preserves every article and directs office access to its authenticated host. Copy the generated files to the repository root before committing a public website update. Keep the application source directories. GitHub Pages deploys from the repository root; the workflow independently validates the source and export.
+
+Do not publish `.generated/legacy/`, an intermediate design, or the entire Worker `dist/` folder as a static site. Keep the Worker backend deployed whenever changing its source; a GitHub Pages push alone does not update that runtime.
 
 ## Lead workflow
 
-The patient quiz, career interest form and community partnership form collect basic contact and preference information. The team follows up manually with the full intake or application. Family referral buttons point to `https://google.com` until the final referral form is supplied.
+Forms collect basic contact and preference information. The team follows up manually with the full intake or application. Family referral buttons point to `https://google.com` until the final referral form is supplied.
 
-Lead records are saved to D1 before email delivery. The authenticated `/office/` dashboard lists requests, downloads PDF summaries and retries queued emails. Every lead email targets `team@dopplerwellness.com`.
+Lead records are saved to D1 before email delivery. The office dashboard lists requests, downloads PDF summaries and retries queued emails. Every lead email targets `team@dopplerwellness.com`.
 
 Configure `RESEND_API_KEY` and a verified plain email address in `LEAD_FROM_EMAIL` as runtime secrets to enable PDF emails. Email credentials are not currently configured; submissions remain in the office queue. `OFFICE_ADMIN_EMAILS` optionally overrides the default server-side office allowlist. Secrets and captured leads are excluded from this repository.
 
-The frontend uses idempotency keys. The backend validates requests, checks origins, enforces size and rate limits, fixes the email recipient and authorizes office access. It does not collect clinical narratives or insurance member IDs.
-
-Asset provenance is recorded in `ASSET_SOURCES.md`. The ChatGPT review site remains marked `noindex`.
+The frontend uses idempotency keys. The backend validates contact fields, consent, origins, request sizes and rate limits. It does not collect clinical narratives or insurance member IDs. Asset provenance is recorded in `ASSET_SOURCES.md`.

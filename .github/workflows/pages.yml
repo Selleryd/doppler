@@ -1,4 +1,4 @@
-name: Validate approved Doppler app source
+name: Validate Doppler website and Pages export
 
 on:
   push:
@@ -23,3 +23,7 @@ jobs:
         run: node scripts/build.mjs
       - name: Validate routes, assets and contact flows
         run: node scripts/check.mjs
+      - name: Verify static export and form routing
+        run: node --experimental-strip-types --test tests/export-pages.test.mjs tests/care-quiz.test.mjs tests/lead-origin.test.mjs
+      - name: Export the GitHub Pages website
+        run: node scripts/export-pages.mjs --output "$RUNNER_TEMP/doppler-pages"

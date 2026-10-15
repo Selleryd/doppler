@@ -106,6 +106,21 @@ test('back, edit and return retain answers; inactive fieldsets cannot validate o
   assert.equal(f.form.root.focused, f.form.querySelectorAll('[data-quiz-step]')[2].querySelector('h3'));
 });
 
+test('Pages export sends the quiz to its configured backend without cross-origin credentials', async () => {
+  const f = fixture();
+  const endpoint = 'https://doppler-wellness-reimagined.sellery.chatgpt.site/api/leads';
+  f.form.ownerDocument = { querySelector: selector => selector === 'meta[name="doppler-lead-endpoint"]' ? { content: endpoint } : null };
+  let sent = false;
+  const quiz = initCareQuiz(f.form, { search: '', fetch: async (url, options) => {
+    assert.equal(url, endpoint);
+    assert.equal(options.credentials, 'same-origin');
+    assert.equal(new URL(url).origin === 'https://selleryd.github.io', false);
+    validateLead(JSON.parse(options.body)); sent = true; return success();
+  } });
+  await contactStep(f); await f.choose('phone', '845-555-0100'); await f.submit();
+  assert.equal(sent, true); assert.equal(quiz.complete, true);
+});
+
 test('contact method switch requires only selected channel and omits stale alternative data', async () => {
   const f = fixture(); let sent;
   const quiz = initCareQuiz(f.form, { fetch: async (_, options) => { sent = JSON.parse(options.body); validateLead(sent); return success(); }, search: '' });

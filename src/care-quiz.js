@@ -26,6 +26,7 @@ export function quizPayload(form) {
 export function initCareQuiz(form, options = {}) {
   if (form.dataset.quizReady === 'true') return form.careQuiz;
   const request = options.fetch || globalThis.fetch.bind(globalThis);
+  const leadEndpoint = options.endpoint || form.ownerDocument?.querySelector('meta[name="doppler-lead-endpoint"]')?.content || '/api/leads';
   const makeId = options.randomUUID || (() => globalThis.crypto.randomUUID());
   const search = options.search ?? globalThis.location?.search ?? '';
   const steps = Array.from(form.querySelectorAll('[data-quiz-step]'));
@@ -129,7 +130,7 @@ export function initCareQuiz(form, options = {}) {
     const abort = new AbortController();
     const timeout = setTimeout(() => abort.abort(), options.timeoutMs || 20000);
     try {
-      const response = await request('/api/leads', { method: 'POST', headers: { 'Content-Type': 'application/json', 'Idempotency-Key': requestKey }, body, signal: abort.signal });
+      const response = await request(leadEndpoint, { method: 'POST', credentials: 'same-origin', headers: { 'Content-Type': 'application/json', 'Idempotency-Key': requestKey }, body, signal: abort.signal });
       const result = await response.json();
       if (!response.ok || !result?.ok) {
         const error = new Error(result?.error || 'We couldn’t send your request. Please try again.');

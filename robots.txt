@@ -1,3 +1,2 @@
 User-agent: *
-Allow: /
-Sitemap: https://dopplerwellness.com/sitemap.xml
+Disallow: /

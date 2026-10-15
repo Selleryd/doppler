@@ -434,7 +434,7 @@ if (scrollStory) {
         return;
       }
 
-      if (reducedMotion.matches) {
+      if (reducedMotion.matches || mobileStory.dataset.layout === 'flow') {
         mobileCards.forEach((card) => {
           card.inert = false;
           card.removeAttribute('aria-hidden');
