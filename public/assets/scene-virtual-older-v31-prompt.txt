@@ -1,0 +1,13 @@
+Use case: illustration-story.
+Asset type: premium Doppler Wellness website image for at-home therapy.
+Input image: use the supplied room scene only as a reference for its warm editorial illustration style, architectural detail, and polished painterly depth. Create a fresh scene, not a recognizable copy of its person.
+Primary request: a dignified woman in her early seventies with naturally silver hair, seated comfortably in an ivory linen armchair in a beautiful tranquil home, having an engaged, relaxed conversation with a therapist visible on a tablet resting securely on a small pale stone table.
+Scene: beautifully restrained warm ivory plaster interior, softly curved architectural alcoves, a few books and sculptural plants, pale honey oak, finely woven linen, clear soft daylight through sheer curtains. A garden outside. Quietly luxurious and lived-in, not a medical office.
+Composition: cinematic wide landscape 16:9 image, seated older woman on left in three-quarter profile; tablet and therapist face clearly readable to the right, at comfortable eye-line height. Include both person's head and tablet safely inside the central 80 percent for responsive crops. Slightly pulled back to breathe. Authentic hands and device anatomy. Calm conversational expression, natural posture, no exaggerated smile.
+Style: polished painterly editorial realism with subtle illustrated texture and soft atmospheric depth, matching the supplied reference's artistic warmth rather than stock photography. Refined, contemporary, airy.
+Palette: luminous warm white and soft ivory, pale buttery yellow light, small powder-blue and sage accents. Light linen armchair. Avoid a large dark navy mass or saturated orange cast.
+Constraints: no wording, no labels, no logos, no watermark, no clinical instruments, no phone app interface, no promises of medical outcome. One older adult physically in room and one adult therapist on tablet only.
+
+Mode: built-in image_gen, using the original scene-virtual.webp as a style and composition reference.
+Selected output: /workspace/scratch/fcb7757beb1e/generated_images/exec-521370c8-0964-4279-a0b5-154cc1940b5e.png
+Delivery: compressed WebP at quality 86, and a 960-pixel-wide responsive version at quality 82. Original scene-virtual.webp remains unchanged.

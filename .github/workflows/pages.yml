@@ -1,0 +1,25 @@
+name: Validate approved Doppler app source
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Generate approved marketing pages and assets
+        run: node scripts/build.mjs
+      - name: Validate routes, assets and contact flows
+        run: node scripts/check.mjs
